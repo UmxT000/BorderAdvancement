@@ -1,0 +1,29 @@
+name: Build BorderAdvancement
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Kodları indir
+        uses: actions/checkout@v4
+
+      - name: Java 21 kur
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Maven ile derle
+        run: mvn clean package
+
+      - name: Jar dosyasını hazırla
+        uses: actions/upload-artifact@v4
+        with:
+          name: BorderAdvancement-JAR
+          path: target/*.jar
