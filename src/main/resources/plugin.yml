@@ -1,0 +1,6 @@
+name: BorderAdvancement
+version: 1.0
+main: me.border.BorderAdvancement
+api-version: '1.21'
+author: UmxT000
+description: Advancement aldıkça world border büyütür
